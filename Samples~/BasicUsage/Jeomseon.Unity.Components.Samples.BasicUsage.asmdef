@@ -1,0 +1,6 @@
+{
+  "name": "Jeomseon.Unity.Components.Samples.BasicUsage",
+  "references": [
+    "Jeomseon.Unity.Components"
+  ]
+}

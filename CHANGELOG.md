@@ -1,5 +1,9 @@
 # 변경 기록
 
+## [0.1.1] - 2026-07-29
+
+- MovementTracker 사용법을 확인하는 `Basic Usage` 샘플을 추가했습니다.
+
 ## [Unreleased]
 
 - TODO(api): 입력 이벤트 컴포넌트는 Input System 패키지의 InputAction 기반 구성으로 대체 가능한지 검토합니다.
