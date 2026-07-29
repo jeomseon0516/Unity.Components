@@ -1,0 +1,10 @@
+{
+  "name": "Jeomseon.Unity.Components",
+  "rootNamespace": "Jeomseon",
+  "references": [
+    "Jeomseon.Unity.Singleton",
+    "Unity.InputSystem"
+  ],
+  "autoReferenced": true,
+  "noEngineReferences": false
+}
