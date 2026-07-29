@@ -1,5 +1,6 @@
 {
   "name": "Jeomseon.Unity.Components.Samples.BasicUsage",
+  "rootNamespace": "Jeomseon.Samples.Components",
   "references": [
     "Jeomseon.Unity.Components"
   ]

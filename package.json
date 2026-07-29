@@ -1,6 +1,6 @@
 {
   "name": "com.jeomseon.unity.components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "displayName": "Jeomseon Unity Components",
   "description": "Reusable MonoBehaviour components and input helpers.",
   "unity": "2022.3",
