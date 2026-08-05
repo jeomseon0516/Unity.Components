@@ -61,6 +61,9 @@ namespace Jeomseon.Components
             }
         }
         
+        /* TODO(P1-01, api): 자체 입력 이벤트 컴포넌트를 Input System의 InputAction 기반 구성으로
+         * 대체할 수 있는지 검토하고, 추가 동작이 필요한 경우에만 이 계층을 유지합니다.
+         */
         private void Update()
         {
             _events.ForEach(inputEvent => inputEvent.Update(this));
