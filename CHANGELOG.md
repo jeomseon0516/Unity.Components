@@ -1,6 +1,21 @@
+# 변경 기록
 
+## [0.1.2] - 2026-07-29
 
-- Unity 6000.5.7f1을 최소 지원 버전으로 상향했습니다.
+- asmdef의 `rootNamespace`와 컴포넌트 파일 위치를 namespace에 맞게 정리했습니다.
+
+## [0.1.1] - 2026-07-29
+
+- MovementTracker 사용법을 확인하는 `Basic Usage` 샘플을 추가했습니다.
+
+## [Unreleased]
+
+- TODO(api): 입력 이벤트 컴포넌트는 Input System 패키지의 InputAction 기반 구성으로 대체 가능한지 검토합니다.
+- 정적 이벤트와 전역 인스턴스의 Domain Reload 비활성화 호환성을 검토합니다.
+
+## [0.1.0] - 2026-07-29
+
+- JeomseonScriptPack의 관련 모듈을 독립 UPM 패키지로 분리했습니다.
 
 
 ## [0.1.3] - 2026-08-05
