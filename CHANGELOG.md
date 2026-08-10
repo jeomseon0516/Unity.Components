@@ -10,8 +10,25 @@
 
 ## [Unreleased]
 
-- TODO(api): 입력 이벤트 컴포넌트는 Input System 패키지의 InputAction 기반 구성으로 대체 가능한지 검토합니다.
-- 정적 이벤트와 전역 인스턴스의 Domain Reload 비활성화 호환성을 검토합니다.
+### 변경
+
+- `MovementTrackerPlayModeSample` Scene을 추가해 시작·진행·종료 event를 Play Mode에서
+  확인할 수 있게 했습니다. C# event와 Inspector UnityEvent Relay의 호출 횟수를 함께 표시합니다.
+- `MovementTracker`를 표준 C# event(`MoveBegan`, `MoveOngoing`, `MoveEnded`) 기반 계약으로
+  정리하고, 선택적 `MovementTrackerUnityEventRelay`를 추가했습니다. Relay는 Inspector
+  UnityEvent를 선호하는 사용자를 위해 별도로 부착합니다.
+- **(Breaking)** 기존 `AddListenerOnMoveBegined`, `AddListenerOnMoveOnGoing`,
+  `AddListenerOnMoveEnded` 및 대응 Remove/RemoveAll 메서드를 제거했습니다. C# event를
+  `+=`/`-=`로 직접 구독합니다.
+- **(Breaking)** `MouseInputEvent`, `MouseLeftInputEvent`, `MouseRightInputEvent`,
+  `MouseMovementTracker`를 제거했습니다. Unity Input System의 `InputActionReference` 또는
+  `PlayerInput` 콜백으로 대체합니다.
+- **(Breaking)** `TransformSmoothMover`, `Vector2SmoothMover`, `IObjectSmoothMover`를
+  제거했습니다. Unity `Vector3.MoveTowards` 또는 `Vector3.Lerp`를 호출부에서 사용합니다.
+- **(Breaking)** `DontDestroy`를 제거했습니다. Unity `Object.DontDestroyOnLoad`를 직접
+  호출하거나 Singleton 패키지를 사용합니다.
+- 더 이상 사용하지 않는 Input System·Singleton 패키지 의존성과 SerializeReferenceDropdown 기반
+  조건부 컴파일을 제거했습니다.
 
 ## [0.1.0] - 2026-07-29
 
