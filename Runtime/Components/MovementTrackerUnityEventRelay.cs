@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Jeomseon.Components
 {
@@ -7,9 +8,9 @@ namespace Jeomseon.Components
     [RequireComponent(typeof(MovementTracker))]
     public sealed class MovementTrackerUnityEventRelay : MonoBehaviour
     {
-        [SerializeField] private UnityEvent<Vector3> _onMoveBegan = new();
-        [SerializeField] private UnityEvent<Vector3> _onMoveOngoing = new();
-        [SerializeField] private UnityEvent<Vector3> _onMoveEnded = new();
+        [SerializeField, FormerlySerializedAs("_onMoveBegan")] private UnityEvent<Vector3> onMoveBegan = new();
+        [SerializeField, FormerlySerializedAs("_onMoveOngoing")] private UnityEvent<Vector3> onMoveOngoing = new();
+        [SerializeField, FormerlySerializedAs("_onMoveEnded")] private UnityEvent<Vector3> onMoveEnded = new();
 
         private MovementTracker _movementTracker;
 
@@ -20,16 +21,16 @@ namespace Jeomseon.Components
 
         private void OnEnable()
         {
-            _movementTracker.MoveBegan += _onMoveBegan.Invoke;
-            _movementTracker.MoveOngoing += _onMoveOngoing.Invoke;
-            _movementTracker.MoveEnded += _onMoveEnded.Invoke;
+            _movementTracker.MoveBegan += onMoveBegan.Invoke;
+            _movementTracker.MoveOngoing += onMoveOngoing.Invoke;
+            _movementTracker.MoveEnded += onMoveEnded.Invoke;
         }
 
         private void OnDisable()
         {
-            _movementTracker.MoveBegan -= _onMoveBegan.Invoke;
-            _movementTracker.MoveOngoing -= _onMoveOngoing.Invoke;
-            _movementTracker.MoveEnded -= _onMoveEnded.Invoke;
+            _movementTracker.MoveBegan -= onMoveBegan.Invoke;
+            _movementTracker.MoveOngoing -= onMoveOngoing.Invoke;
+            _movementTracker.MoveEnded -= onMoveEnded.Invoke;
         }
     }
 }
