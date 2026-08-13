@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-namespace Jeomseon.Components
+namespace Jeomseon.Unity.Components
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(MovementTracker))]

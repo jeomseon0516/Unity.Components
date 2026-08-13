@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Jeomseon.Components
+namespace Jeomseon.Unity.Components
 {
     [DisallowMultipleComponent]
     public sealed class MovementTracker : MonoBehaviour

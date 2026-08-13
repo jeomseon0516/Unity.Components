@@ -1,4 +1,4 @@
-using Jeomseon.Components;
+using Jeomseon.Unity.Components;
 using UnityEngine;
 
 namespace Jeomseon.Samples.Components

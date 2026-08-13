@@ -1,6 +1,10 @@
 # 변경 기록
 
-## [Unreleased]
+## [0.3.0] - 2026-08-13
+
+- **(Breaking)** 네임스페이스를 `Jeomseon.Components` → `Jeomseon.Unity.Components`로 변경했습니다.
+  `Runtime/Components/` 폴더가 패키지 이름과 중복돼 `Runtime/`으로 평탄화했습니다(GUID 보존).
+  워크스페이스 전체 네임스페이스 규칙(`AGENTS.md` 참고)을 적용한 것입니다.
 
 ## [0.2.1] - 2026-08-11
 
