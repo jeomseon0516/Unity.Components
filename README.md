@@ -15,12 +15,33 @@ tracker.MoveEnded += OnMoveEnded;
 Inspector에서 이벤트를 연결하려면 같은 GameObject에 `MovementTrackerUnityEventRelay`를 추가합니다.
 Relay는 Tracker의 event를 `On Move Began`, `On Move Ongoing`, `On Move Ended` UnityEvent로 전달합니다.
 
-## 설치
+## OpenUPM으로 설치
 
-OpenUPM 등록 전에는 Package Manager의 **Add package from git URL**에서 다음 주소를 사용합니다.
+프로젝트의 `Packages/manifest.json`에 OpenUPM scoped registry를 한 번 등록합니다.
+
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.jeomseon"
+      ]
+    }
+  ],
+  "dependencies": {
+    "com.jeomseon.unity.components": "0.3.1"
+  }
+}
+```
+
+## Git URL로 설치
+
+Unity Package Manager의 `Install package from git URL`에 다음 주소를 사용합니다.
 
 ```text
-https://github.com/jeomseon0516/Unity.Components.git#v0.2.0
+https://github.com/jeomseon0516/Unity.Components.git#v0.3.1
 ```
 
 ## Unity 기본 기능으로의 전환
