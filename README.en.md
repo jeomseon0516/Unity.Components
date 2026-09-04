@@ -3,6 +3,35 @@
 Provides `MovementTracker`, a component for observing Transform movement begin,
 ongoing, and end events.
 
+## Install via OpenUPM
+
+Register the OpenUPM scoped registry once in your project's `Packages/manifest.json`.
+
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.jeomseon"
+      ]
+    }
+  ],
+  "dependencies": {
+    "com.jeomseon.unity.components": "0.3.1"
+  }
+}
+```
+
+## Install via Git URL
+
+Enter the following URL in Unity Package Manager's `Install package from git URL`.
+
+```text
+https://github.com/jeomseon0516/Unity.Components.git#v0.3.1
+```
+
 ## MovementTracker
 
 Subscribe to the C# events directly in code: `MoveBegan`, `MoveOngoing`, and
