@@ -17,11 +17,8 @@ URP 프로젝트에서 `TransformFollowerSample.unity`를 열고 Play Mode의 Ga
    `Moving Target`, **Settings Asset**은 `SampleFollowSettings`를 가리킵니다.
 2. Play Mode에서 기본 **X** 설정으로 Follower가 가로로 추적하고 월드 Y(-2)와 Z(0)를
    유지하는지 확인합니다. 시작할 때 X는 대상의 X에 오프셋을 더한 위치로 스냅합니다.
-3. Play Mode를 종료합니다. **Settings Asset**에 표시된 `SampleFollowSettings`를 더블클릭한 뒤
-   자산 Inspector의 **Axes**에 **Y**와 **Z**를 추가하고 다시 실행합니다. 각 오브젝트의 Transform에서 세 좌표가
-   추적되는 것을 확인합니다.
-4. Play Mode를 종료한 뒤 **Offset**이나 **Smooth Time**을 바꿔 다시 실행합니다.
-   Smooth Time이 0이면 선택 축의 위치가 즉시 갱신되고, 양수이면 보간합니다.
+3. Play Mode에서 `Follower`의 **Runtime Settings**를 펼칩니다. **Axes**에 Y와 Z를 추가하거나
+   **Offset**, **Smooth Time**을 바꿉니다. 변경은 현재 Follower에 즉시 적용됩니다. Smooth Time을 0으로 두면 다음 위치 갱신부터 보간 없이 따라갑니다.
 
-Follower는 초기화 시 프리셋 값을 복사합니다. 실행 중 자산 편집은 이미 초기화된 Follower의
-값을 갱신하지 않으며, 자산 편집은 세션 종료 후에도 저장될 수 있습니다.
+**Asset Properties**는 공유 프리셋을 편집합니다. Follower는 시작 시 프리셋을 복사하므로
+실행 중 프리셋을 편집해도 현재 추적에는 자동으로 반영되지 않습니다.
