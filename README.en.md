@@ -101,6 +101,8 @@ Changes to Inspector references or the shared preset during Play Mode take effec
 initialization. Use `SetSettings(asset.ToSettings())` and `SetTarget` to update the current instance.
 `ToSettings()` copies the preset into a value and treats negative or non-finite smooth times as zero.
 A smooth time of zero applies subsequent position updates immediately.
+For an immediate runtime snap, call `Initialize` or set the axes with `SetSettings` first.
+`SetTarget` snaps the axes selected at the time of the call. A later `SetSettings` does not snap.
 
 ### Migration to Unity APIs
 

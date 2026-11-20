@@ -107,6 +107,8 @@ Assets의 Create 메뉴에서 **Jeomseon > Components > Follow Settings**를 선
 현재 인스턴스에 적용하려면 `SetSettings(asset.ToSettings())`와 `SetTarget`을 사용합니다.
 `ToSettings()`는 설정을 값으로 복사하며, 음수 또는 유한하지 않은 보간 시간은 0으로 처리합니다.
 보간 시간이 0이면 이후 위치 갱신에 보간을 적용하지 않습니다.
+코드 초기화에서 즉시 스냅하려면 `Initialize`를 사용하거나 `SetSettings`를 먼저 호출합니다.
+`SetTarget`은 호출 시점에 선택된 축만 스냅하고, 이후 `SetSettings`는 즉시 스냅하지 않습니다.
 
 ### Unity 기본 기능으로의 전환
 
