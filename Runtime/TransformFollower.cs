@@ -4,9 +4,21 @@ namespace Jeomseon.Unity.Components
 {
     public sealed class TransformFollower : MonoBehaviour
     {
+        [SerializeField] private Transform target;
+        [SerializeField] private TransformFollowerSettingsAsset settingsAsset;
+
         private FollowSettings _settings;
         private Transform _target;
         private Vector3 _velocity;
+        private bool _hasRuntimeConfiguration;
+
+        private void Start()
+        {
+            if (_hasRuntimeConfiguration || target == null || settingsAsset == null)
+                return;
+
+            Initialize(settingsAsset.ToSettings(), target);
+        }
 
         public void Initialize(FollowSettings settings, Transform target)
         {
@@ -16,6 +28,7 @@ namespace Jeomseon.Unity.Components
 
         public void SetTarget(Transform target, bool snap = true)
         {
+            _hasRuntimeConfiguration = true;
             _target = target;
             _velocity = Vector3.zero;
 
@@ -25,6 +38,7 @@ namespace Jeomseon.Unity.Components
 
         public void SetSettings(FollowSettings settings)
         {
+            _hasRuntimeConfiguration = true;
             var changed = _settings.Axes ^ settings.Axes;
 
             // 축이 바뀐 곳만 속도를 초기화합니다.
