@@ -21,3 +21,9 @@
    - `MovementTracker`는 C# event로 관찰 계약만 제공하고, Inspector UnityEvent가 필요한 경우에만
      `MovementTrackerUnityEventRelay`를 조립합니다. 위치 원본·판정 정책 분리는 실제 요구가
      생길 때만 검토합니다.
+
+### TransformFollower
+
+- `TransformFollower`는 선택 축을 월드 좌표에서 추적합니다. `Initialize`는 즉시 스냅하고 이후 LateUpdate에서 오프셋과 보간을 적용합니다.
+- `FollowSettings(FollowAxes, in Vector3, float)`의 보간 시간은 유한한 0 이상이어야 합니다. 0이면 즉시 이동합니다.
+- Basic Usage의 `TransformFollowerSample`에서 초기 스냅, 축 고정과 보간을 확인합니다.
