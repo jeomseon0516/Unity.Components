@@ -26,4 +26,6 @@
 
 - `TransformFollower`는 선택 축을 월드 좌표에서 추적합니다. `Initialize`는 즉시 스냅하고 이후 LateUpdate에서 오프셋과 보간을 적용합니다.
 - `FollowSettings(FollowAxes, in Vector3, float)`의 보간 시간은 유한한 0 이상이어야 합니다. 0이면 즉시 이동합니다.
+- `SetTarget`은 보간 속도를 초기화하며, `snap: false`는 다음 LateUpdate부터 추적을 시작합니다. 대상이 없거나 파괴되면 위치 갱신을 멈춥니다.
+- `SetSettings`는 선택 여부가 바뀐 축의 속도를 초기화합니다. 양수 보간 시간만 바꾸면 현재 속도를 이어가며, 보간에는 최대 속도 제한을 두지 않습니다.
 - Basic Usage의 `TransformFollowerSample`에서 초기 스냅, 축 고정과 보간을 확인합니다.
