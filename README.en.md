@@ -88,6 +88,20 @@ Subscribe to the C# events directly in code: `MoveBegan`, `MoveOngoing`, and
 `MoveEnded`. To connect Inspector events, add `MovementTrackerUnityEventRelay`
 to the same GameObject. The relay forwards those events to serialized UnityEvents.
 
+### TransformFollower
+
+Use **Create > Jeomseon > Components > Follow Settings** in the Assets menu to create a shared
+`TransformFollowerSettingsAsset` preset.
+It defaults to all axes, zero offset, and a smooth time of 0.25 seconds. Assign **Target** and
+**Settings Asset** on the component to copy the preset on its first `Start` and snap the selected world
+axes to the target position plus the offset. Automatic initialization requires both references.
+
+Calling `Initialize`, `SetSettings`, or `SetTarget` before `Start` gives code ownership of initialization.
+Changes to Inspector references or the shared preset during Play Mode take effect at the next
+initialization. Use `SetSettings(asset.ToSettings())` and `SetTarget` to update the current instance.
+`ToSettings()` copies the preset into a value and treats negative or non-finite smooth times as zero.
+A smooth time of zero applies subsequent position updates immediately.
+
 ### Migration to Unity APIs
 
 - Replace the removed mouse input APIs with Input System `InputActionReference` or

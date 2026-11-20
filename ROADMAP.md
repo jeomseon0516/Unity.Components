@@ -31,12 +31,10 @@
 - Basic Usage의 `TransformFollowerSample`의 URP Game 뷰와 기본 Inspector에서 초기 스냅, 축 고정,
   오프셋과 보간을 확인합니다.
 
-#### Inspector 설정 자산 제안
+#### Inspector 설정 자산
 
-- 공유 프리셋은 `ScriptableObject`에 `FollowAxes`, `Vector3` 오프셋 및 0 이상의 보간 시간을
-  직렬화합니다. 씬의 `TransformFollower`는 대상 `Transform`과 프리셋을 참조하고, 초기화할 때
-  기존 `FollowSettings` 값으로 복사합니다.
-- 두 참조를 갖춘 컴포넌트만 씬 설정으로 한 번 초기화합니다. 참조가 비어 있으면 자동 초기화하지
-  않으며, 런타임 `Initialize` 호출이 이미 설정한 상태를 덮어쓰지 않습니다.
-- Play Mode에서 코드는 `SetSettings`와 `SetTarget`으로 인스턴스를 변경합니다. 공유 프리셋의
-  Inspector 편집은 다음 초기화부터 적용하는 계약을 검토합니다.
+- `TransformFollowerSettingsAsset`에 축·오프셋·보간 값을 저장하고 `TransformFollower`에서 씬 대상과
+  설정 자산을 지정합니다. 둘 다 할당하면 최초 `Start`에서 한 번 복사해 초기 스냅합니다.
+- 두 참조 중 하나라도 없거나 `Start` 전에 추적 API를 호출한 경우 Inspector 자동 초기화는
+  생략합니다. 활성화 반복과 설정 자산 편집은 기존 인스턴스의 추적 상태를 바꾸지 않습니다.
+- 현재 인스턴스는 기존 `Initialize`, `SetSettings`, `SetTarget` API로 변경합니다.

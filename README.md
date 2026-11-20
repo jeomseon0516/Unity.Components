@@ -95,6 +95,19 @@ tracker.MoveEnded += OnMoveEnded;
 Inspector에서 이벤트를 연결하려면 같은 GameObject에 `MovementTrackerUnityEventRelay`를 추가합니다.
 Relay는 Tracker의 event를 `On Move Began`, `On Move Ongoing`, `On Move Ended` UnityEvent로 전달합니다.
 
+### TransformFollower
+
+Assets의 Create 메뉴에서 **Jeomseon > Components > Follow Settings**를 선택해 공유 `TransformFollowerSettingsAsset` 프리셋을
+만듭니다. 기본값은 모든 축, 오프셋 0, 보간 시간 0.25초입니다. 컴포넌트의 **Target**과
+**Settings Asset**을 연결하면 첫 `Start`에서 프리셋을 복사하고, 선택한 월드 축을 대상 위치에
+오프셋을 더한 값으로 스냅합니다. 자동 초기화에는 두 참조가 필요합니다.
+
+`Start`보다 먼저 `Initialize`, `SetSettings` 또는 `SetTarget`을 호출하면 최초 설정을 코드가
+담당합니다. Play Mode에서 Inspector의 참조나 공유 프리셋을 바꾼 값은 다음 초기화에 사용합니다.
+현재 인스턴스에 적용하려면 `SetSettings(asset.ToSettings())`와 `SetTarget`을 사용합니다.
+`ToSettings()`는 설정을 값으로 복사하며, 음수 또는 유한하지 않은 보간 시간은 0으로 처리합니다.
+보간 시간이 0이면 이후 위치 갱신에 보간을 적용하지 않습니다.
+
 ### Unity 기본 기능으로의 전환
 
 다음 레거시 API는 제거했습니다.
