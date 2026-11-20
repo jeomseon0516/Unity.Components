@@ -78,6 +78,7 @@ namespace Jeomseon.Unity.Components
                     _settings.SmoothTime, Mathf.Infinity, deltaTime);
 
             velocity = 0f;
-            return desired;        }
+            return desired;
+        }
     }
 }
