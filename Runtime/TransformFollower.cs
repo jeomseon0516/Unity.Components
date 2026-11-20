@@ -1,3 +1,4 @@
+using Jeomseon.Unity.Attributes;
 using UnityEngine;
 
 namespace Jeomseon.Unity.Components
@@ -5,12 +6,14 @@ namespace Jeomseon.Unity.Components
     public sealed class TransformFollower : MonoBehaviour
     {
         [SerializeField] private Transform target;
-        [SerializeField] private TransformFollowerSettingsAsset settingsAsset;
+        [SerializeField, InlineScriptableObject] private TransformFollowerSettingsAsset settingsAsset;
 
         private FollowSettings _settings;
         private Transform _target;
         private Vector3 _velocity;
         private bool _hasRuntimeConfiguration;
+
+        public FollowSettings Settings => _settings;
 
         private void Start()
         {

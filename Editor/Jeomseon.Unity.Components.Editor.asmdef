@@ -1,0 +1,7 @@
+{
+  "name": "Jeomseon.Unity.Components.Editor",
+  "rootNamespace": "Jeomseon.Unity.Components.Editor",
+  "references": ["Jeomseon.Unity.Components"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}
