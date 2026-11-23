@@ -132,6 +132,7 @@ Play Mode에 단일 컴포넌트를 선택하면 **Runtime Settings**에서 축�
 
 - [Basic Usage](Samples~/BasicUsage/README.md)
   - [MovementTrackerPlayModeSample](Samples~/BasicUsage/MovementTrackerPlayModeSample.unity)
+  - [TransformFollowerSample](Samples~/BasicUsage/TransformFollowerSample.unity)
 
 ## 추가 문서
 

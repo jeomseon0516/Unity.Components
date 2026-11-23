@@ -123,6 +123,7 @@ Import the desired entry from **Package Manager > Samples**. Use the included Sc
 
 - [Basic Usage](Samples~/BasicUsage/README.md)
   - [MovementTrackerPlayModeSample](Samples~/BasicUsage/MovementTrackerPlayModeSample.unity)
+  - [TransformFollowerSample](Samples~/BasicUsage/TransformFollowerSample.unity)
 
 ## Further reading
 
