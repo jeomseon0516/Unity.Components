@@ -51,7 +51,7 @@ Payloads are position deltas, not velocity. Threshold is clamped to 0.01–0.5. 
 ## Requirements
 
 - Unity `6000.6.0f1`
-- Package: `com.jeomseon.unity.components` `0.3.1`
+- Package: `com.jeomseon.unity.components` `0.4.0`
 
 ## Installation
 
@@ -69,7 +69,7 @@ Merge this into your project's `Packages/manifest.json`; preserve existing depen
     }
   ],
   "dependencies": {
-    "com.jeomseon.unity.components": "0.3.1"
+    "com.jeomseon.unity.components": "0.4.0"
   }
 }
 ```
@@ -77,7 +77,7 @@ Merge this into your project's `Packages/manifest.json`; preserve existing depen
 Or use **Install package from git URL** in Package Manager:
 
 ```text
-https://github.com/jeomseon0516/Unity.Components.git#v0.3.1
+https://github.com/jeomseon0516/Unity.Components.git#v0.4.0
 ```
 
 ## API usage and details
@@ -94,11 +94,15 @@ Use **Create > Jeomseon > Components > Follow Settings** in the Assets menu to c
 `TransformFollowerSettingsAsset` preset.
 It defaults to all axes, zero offset, and a smooth time of 0.25 seconds. Assign **Target** and
 **Settings Asset** on the component to copy the preset on its first `Start` and snap the selected world
-axes to the target position plus the offset. Automatic initialization requires both references.
+axes to the target position plus the offset. Automatic initialization requires both references. Expand **Asset Properties** under **Settings Asset**
+to edit the shared asset in the component Inspector.
 
 Calling `Initialize`, `SetSettings`, or `SetTarget` before `Start` gives code ownership of initialization.
 Changes to Inspector references or the shared preset during Play Mode take effect at the next
 initialization. Use `SetSettings(asset.ToSettings())` and `SetTarget` to update the current instance.
+Select one component in Play Mode to edit its axes, offset, and smooth time under **Runtime Settings**.
+Edits apply immediately to the current instance only. In code, read the current
+value through `Settings` and change it with `SetSettings`.
 `ToSettings()` copies the preset into a value and treats negative or non-finite smooth times as zero.
 A smooth time of zero applies subsequent position updates immediately.
 For an immediate runtime snap, call `Initialize` or set the axes with `SetSettings` first.
@@ -119,6 +123,7 @@ Import the desired entry from **Package Manager > Samples**. Use the included Sc
 
 - [Basic Usage](Samples~/BasicUsage/README.md)
   - [MovementTrackerPlayModeSample](Samples~/BasicUsage/MovementTrackerPlayModeSample.unity)
+  - [TransformFollowerSample](Samples~/BasicUsage/TransformFollowerSample.unity)
 
 ## Further reading
 

@@ -5,6 +5,7 @@
 ## 목적
 
 MovementTracker가 Transform의 FixedUpdate 간 위치 차이를 관찰하고 이동 시작·지속·종료 이벤트를 제공합니다.
+TransformFollower는 설정 자산에서 초기값을 복사하고 런타임에는 인스턴스의 FollowSettings를 사용해 선택한 축에서 대상을 추적합니다.
 
 ## 사용 흐름
 
@@ -17,7 +18,7 @@ Tracker 추가 → MoveBegan/MoveOngoing/MoveEnded 구독 → 매 FixedUpdate에
 ## 패키지 요구 사항
 
 - Package ID: `com.jeomseon.unity.components`
-- Version: `0.3.1`
+- Version: `0.4.0`
 - Unity: `6000.6` / `0f1`
 
 ## 샘플과 검증
@@ -26,8 +27,14 @@ Package Manager > Samples에서 다음 예제를 Import하세요. 포함된 Scen
 
 - [Basic Usage](../Samples~/BasicUsage/README.md)
   - [MovementTrackerPlayModeSample](../Samples~/BasicUsage/MovementTrackerPlayModeSample.unity)
+  - [TransformFollowerSample](../Samples~/BasicUsage/TransformFollowerSample.unity)
 
 ## 코드 지도
 
 - [MovementTracker](../Runtime/MovementTracker.cs)
 - [MovementTrackerUnityEventRelay](../Runtime/MovementTrackerUnityEventRelay.cs)
+- [TransformFollower](../Runtime/TransformFollower.cs)
+- [FollowSettings](../Runtime/FollowSettings.cs)
+- [FollowAxes](../Runtime/FollowAxes.cs)
+- [TransformFollowerSettingsAsset](../Runtime/TransformFollowerSettingsAsset.cs)
+- [TransformFollowerEditor](../Editor/TransformFollowerEditor.cs)

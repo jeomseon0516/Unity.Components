@@ -51,7 +51,7 @@ namespace Jeomseon.Samples.Components
 ## 요구 사항
 
 - Unity `6000.6.0f1`
-- 패키지: `com.jeomseon.unity.components` `0.3.1`
+- 패키지: `com.jeomseon.unity.components` `0.4.0`
 
 ## 설치
 
@@ -69,7 +69,7 @@ namespace Jeomseon.Samples.Components
     }
   ],
   "dependencies": {
-    "com.jeomseon.unity.components": "0.3.1"
+    "com.jeomseon.unity.components": "0.4.0"
   }
 }
 ```
@@ -77,7 +77,7 @@ namespace Jeomseon.Samples.Components
 또는 Package Manager의 **Install package from git URL**을 사용합니다:
 
 ```text
-https://github.com/jeomseon0516/Unity.Components.git#v0.3.1
+https://github.com/jeomseon0516/Unity.Components.git#v0.4.0
 ```
 
 ## API 사용과 상세 설명
@@ -100,11 +100,15 @@ Relay는 Tracker의 event를 `On Move Began`, `On Move Ongoing`, `On Move Ended`
 Assets의 Create 메뉴에서 **Jeomseon > Components > Follow Settings**를 선택해 공유 `TransformFollowerSettingsAsset` 프리셋을
 만듭니다. 기본값은 모든 축, 오프셋 0, 보간 시간 0.25초입니다. 컴포넌트의 **Target**과
 **Settings Asset**을 연결하면 첫 `Start`에서 프리셋을 복사하고, 선택한 월드 축을 대상 위치에
-오프셋을 더한 값으로 스냅합니다. 자동 초기화에는 두 참조가 필요합니다.
+오프셋을 더한 값으로 스냅합니다. 자동 초기화에는 두 참조가 필요합니다. **Settings Asset** 아래의 **Asset Properties**를 펼치면
+공유 자산을 컴포넌트 Inspector에서 편집할 수 있습니다.
 
 `Start`보다 먼저 `Initialize`, `SetSettings` 또는 `SetTarget`을 호출하면 최초 설정을 코드가
 담당합니다. Play Mode에서 Inspector의 참조나 공유 프리셋을 바꾼 값은 다음 초기화에 사용합니다.
 현재 인스턴스에 적용하려면 `SetSettings(asset.ToSettings())`와 `SetTarget`을 사용합니다.
+Play Mode에 단일 컴포넌트를 선택하면 **Runtime Settings**에서 축·오프셋·보간 시간을
+수정하면 현재 인스턴스에 즉시 적용됩니다.
+코드에서는 `Settings`로 현재 값을 읽고 `SetSettings`로 변경합니다.
 `ToSettings()`는 설정을 값으로 복사하며, 음수 또는 유한하지 않은 보간 시간은 0으로 처리합니다.
 보간 시간이 0이면 이후 위치 갱신에 보간을 적용하지 않습니다.
 코드 초기화에서 즉시 스냅하려면 `Initialize`를 사용하거나 `SetSettings`를 먼저 호출합니다.
@@ -128,6 +132,7 @@ Assets의 Create 메뉴에서 **Jeomseon > Components > Follow Settings**를 선
 
 - [Basic Usage](Samples~/BasicUsage/README.md)
   - [MovementTrackerPlayModeSample](Samples~/BasicUsage/MovementTrackerPlayModeSample.unity)
+  - [TransformFollowerSample](Samples~/BasicUsage/TransformFollowerSample.unity)
 
 ## 추가 문서
 

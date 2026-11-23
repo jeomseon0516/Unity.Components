@@ -1,7 +1,9 @@
 {
   "name": "Jeomseon.Unity.Components",
   "rootNamespace": "Jeomseon.Unity.Components",
-  "references": [],
+  "references": [
+    "Jeomseon.Unity.Attributes"
+  ],
   "autoReferenced": true,
   "noEngineReferences": false
 }
