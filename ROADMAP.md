@@ -28,4 +28,13 @@
 - `FollowSettings(FollowAxes, in Vector3, float)`의 보간 시간은 유한한 0 이상이어야 합니다. 0이면 즉시 이동합니다.
 - `SetTarget`은 보간 속도를 초기화하며, `snap: false`는 다음 LateUpdate부터 추적을 시작합니다. 대상이 없거나 파괴되면 위치 갱신을 멈춥니다.
 - `SetSettings`는 선택 여부가 바뀐 축의 속도를 초기화합니다. 양수 보간 시간만 바꾸면 현재 속도를 이어가며, 보간에는 최대 속도 제한을 두지 않습니다.
-- Basic Usage의 `TransformFollowerSample`에서 초기 스냅, 축 고정과 보간을 확인합니다.
+- Basic Usage의 `TransformFollowerSample`의 URP Game 뷰와 기본 Inspector에서 초기 스냅, 축 고정,
+  오프셋과 보간을 확인합니다.
+
+#### Inspector 설정 자산
+
+- `TransformFollowerSettingsAsset`에 축·오프셋·보간 값을 저장하고 `TransformFollower`에서 씬 대상과
+  설정 자산을 지정합니다. 둘 다 할당하면 최초 `Start`에서 한 번 복사해 초기 스냅합니다.
+- 두 참조 중 하나라도 없거나 `Start` 전에 추적 API를 호출한 경우 Inspector 자동 초기화는
+  생략합니다. 활성화 반복과 설정 자산 편집은 기존 인스턴스의 추적 상태를 바꾸지 않습니다.
+- 현재 인스턴스는 기존 `Initialize`, `SetSettings`, `SetTarget` API로 변경합니다.
