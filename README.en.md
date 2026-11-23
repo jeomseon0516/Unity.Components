@@ -51,7 +51,7 @@ Payloads are position deltas, not velocity. Threshold is clamped to 0.01–0.5. 
 ## Requirements
 
 - Unity `6000.6.0f1`
-- Package: `com.jeomseon.unity.components` `0.3.1`
+- Package: `com.jeomseon.unity.components` `0.4.0`
 
 ## Installation
 
@@ -69,7 +69,7 @@ Merge this into your project's `Packages/manifest.json`; preserve existing depen
     }
   ],
   "dependencies": {
-    "com.jeomseon.unity.components": "0.3.1"
+    "com.jeomseon.unity.components": "0.4.0"
   }
 }
 ```
@@ -77,7 +77,7 @@ Merge this into your project's `Packages/manifest.json`; preserve existing depen
 Or use **Install package from git URL** in Package Manager:
 
 ```text
-https://github.com/jeomseon0516/Unity.Components.git#v0.3.1
+https://github.com/jeomseon0516/Unity.Components.git#v0.4.0
 ```
 
 ## API usage and details

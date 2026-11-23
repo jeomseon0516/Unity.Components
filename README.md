@@ -51,7 +51,7 @@ namespace Jeomseon.Samples.Components
 ## 요구 사항
 
 - Unity `6000.6.0f1`
-- 패키지: `com.jeomseon.unity.components` `0.3.1`
+- 패키지: `com.jeomseon.unity.components` `0.4.0`
 
 ## 설치
 
@@ -69,7 +69,7 @@ namespace Jeomseon.Samples.Components
     }
   ],
   "dependencies": {
-    "com.jeomseon.unity.components": "0.3.1"
+    "com.jeomseon.unity.components": "0.4.0"
   }
 }
 ```
@@ -77,7 +77,7 @@ namespace Jeomseon.Samples.Components
 또는 Package Manager의 **Install package from git URL**을 사용합니다:
 
 ```text
-https://github.com/jeomseon0516/Unity.Components.git#v0.3.1
+https://github.com/jeomseon0516/Unity.Components.git#v0.4.0
 ```
 
 ## API 사용과 상세 설명

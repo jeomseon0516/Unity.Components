@@ -1,12 +1,12 @@
 {
   "name": "com.jeomseon.unity.components",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "displayName": "Jeomseon Unity Components",
   "description": "Transform movement observation component.",
   "unity": "6000.6",
   "unityRelease": "0f1",
   "dependencies": {
-    "com.jeomseon.unity.attributes": "0.4.2"
+    "com.jeomseon.unity.attributes": "0.5.0"
   },
   "author": {
     "name": "jeomseon0516",
